@@ -23,7 +23,7 @@ const power = function(base, exponent) {
 };
 
 const factorial = function(number) {
-  const integersUpto_Number = Array.from(Array(number).keys()); // [0, 1, 2, ... number]
+  const integersUpto_Number = Array.from(Array(number).keys()); // [0, 1, 2, ... number - 1]
   return integersUpto_Number.reduce((product, currentNumber) => {
     return product * (currentNumber + 1);
   }, 1);
