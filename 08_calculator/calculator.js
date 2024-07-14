@@ -7,19 +7,15 @@ const subtract = function(minuend, subtrahend) {
 };
 
 const sum = function(addendList) {
-	let total = 0;
-  for (let index = 0; index < addendList.length; index++) {
-    total = total + addendList[index];
-  }
-  return total;
+	return addendList.reduce((currentSum, currentElement) => {
+    return currentSum + currentElement
+  }, 0);
 };
 
 const multiply = function(factorList) {
-  let total = 1;
-  for (let index = 0; index < factorList.length; index++) {
-    total = total * factorList[index];
-  }
-  return total;
+  return factorList.reduce((product, currentNumber) => {
+    return product * currentNumber;
+  }, 1);
 };
 
 const power = function(base, exponent) {
@@ -27,11 +23,10 @@ const power = function(base, exponent) {
 };
 
 const factorial = function(number) {
-	let total = 1;
-  for (let i = number; i > 0; i--) {
-    total = total * i;
-  }
-  return total;
+  const integersUpto_Number = Array.from(Array(number).keys()); // [0, 1, 2, ... number]
+  return integersUpto_Number.reduce((product, currentNumber) => {
+    return product * (currentNumber + 1);
+  }, 1);
 };
 
 // Do not edit below this line
